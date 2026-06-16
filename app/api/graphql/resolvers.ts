@@ -67,9 +67,9 @@ const resolvers = {
         where: and(...andFilters),
         orderBy: [
           asc(sql`case ${issues.status}
-        when "backlog" then 1
-        when "inprogress" then 2
-        when "done" then 3
+        when 'backlog' then 1
+        when 'inprogress' then 2
+        when 'done' then 3
       end`),
           desc(issues.createdAt),
         ],
